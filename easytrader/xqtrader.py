@@ -239,7 +239,7 @@ class XueQiuTrader(webtrader.WebTrader):
         """
         xq_entrust_list = self._get_xq_history()
         entrust_list = []
-        replace_none = lambda s: s or 0
+        def replace_none(s): return s or 0
         for xq_entrusts in xq_entrust_list:
             status = xq_entrusts["status"]  # 调仓状态
             if status == "pending":
@@ -344,10 +344,10 @@ class XueQiuTrader(webtrader.WebTrader):
                 {
                     "code": stock["code"],
                     "name": stock["name"],
-                    "enName": stock["enName"],
-                    "hasexist": stock["hasexist"],
+                    # "enName": stock["enName"],
+                    # "hasexist": stock["hasexist"],
                     "flag": stock["flag"],
-                    "type": stock["type"],
+                    # "type": stock["type"],
                     "current": stock["current"],
                     "chg": stock["chg"],
                     "percent": str(stock["percent"]),
@@ -445,10 +445,10 @@ class XueQiuTrader(webtrader.WebTrader):
                     {
                         "code": stock["code"],
                         "name": stock["name"],
-                        "enName": stock["enName"],
-                        "hasexist": stock["hasexist"],
+                        # "enName": stock["enName"],
+                        # "hasexist": stock["hasexist"],
                         "flag": stock["flag"],
-                        "type": stock["type"],
+                        # "type": stock["type"],
                         "current": stock["current"],
                         "chg": stock["chg"],
                         "percent": str(stock["percent"]),
